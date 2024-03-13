@@ -18,7 +18,7 @@ class ProductCard extends StatefulWidget {
 class _ProductCardState extends State<ProductCard> {
   @override
   Widget build(BuildContext context) {
-    var product = CartProvider().products;
+    var product = CartProvider().cartItems;
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -45,7 +45,7 @@ class _ProductCardState extends State<ProductCard> {
             ElevatedButton(
                 onPressed: () {
                   Provider.of<CartProvider>(context, listen: false)
-                      .addProduct(product as Product);
+                      .addProduct(widget.product);
                 },
                 child: Text("Add to Cart")),
           ],

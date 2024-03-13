@@ -18,9 +18,9 @@ class _CartScreenState extends State<CartScreen> {
           title: Text("Cart Screen"),
         ),
         body: ListView.builder(
-            itemCount: cartProvider.products.length,
+            itemCount: cartProvider.cartItems.length,
             itemBuilder: (context, index) {
-              var product = cartProvider.products[index];
+              var product = cartProvider.cartItems[index];
               return ListTile(
                 title: Text(product.title),
                 subtitle: Text('Price:\$${product.price}'),
